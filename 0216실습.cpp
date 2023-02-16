@@ -8,7 +8,7 @@ int main() {
 	int num_c;
 	int game = 1;
 	bool turn = true;
-
+	srand(time(NULL));
 
 
 	while (game < 32) {
@@ -18,20 +18,14 @@ int main() {
 			cin >> num;
 			if (num > 3 || num < 1) {
 				cout << "잘못입력하셨습니다. \n";
-				break;
+				continue;
 			}
 
 			cout << "사용자가 부른 숫자 :" << num << endl;
 			turn = false;
 		}
 		else {
-
-			cout << "개수를 입력하세요 (1~3) : ";
-			cin >> num;
-			if (num > 3 || num < 1) {
-				cout << "잘못입력하셨습니다.\n";
-				break;
-			}
+			num = rand() % 3 + 1;
 			cout << "컴퓨터가 부른 숫자 : " << num << endl;
 			turn = true;
 		}
